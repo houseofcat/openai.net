@@ -30,7 +30,7 @@ namespace OpenAI.Tests
                 {
                     BaseUrl = "https://api.openai.com",
                     ApiVersion = "v1",
-                    ApiKey = "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"
+                    ApiKey = "<YOUR API KEY HERE>"
                 });
         }
     }
