@@ -11,7 +11,6 @@ public class OpenAIClientOptions
     public string ApiVersion { get; set; } = "v1";
     public string ApiKey { get; set; }
     public string Organization { get; set; }
-    public string EngineId { get; set; }
 
     public TimeSpan HttpClientTimeout { get; set; }
     public TimeSpan HttpHandlerLifetime { get; set; }

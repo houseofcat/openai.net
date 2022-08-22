@@ -2,12 +2,8 @@
 
 namespace OpenAI.Clients.Responses;
 
-public class ModelPermission
+public class OpenAIModelPermission : OpenAIBaseResponse
 {
-    public string Id { get; set; }
-
-    public string Object { get; set; }
-
     public long Created { get; set; }
 
     [JsonPropertyName("allow_create_engine")]

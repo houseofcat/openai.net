@@ -13,8 +13,4 @@
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.8" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Requests\" />
-  </ItemGroup>
-
 </Project>

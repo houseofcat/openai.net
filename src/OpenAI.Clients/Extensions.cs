@@ -6,6 +6,7 @@ using System;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace OpenAI.Clients;
@@ -64,9 +65,9 @@ public static class Extensions
 
 public static class HttpMessageExtensions
 {
-    public static JsonSerializerOptions DefaultJsonSerializerOptions = new JsonSerializerOptions
+    public static JsonSerializerOptions DefaultJsonSerializerOptions { get; set; } = new JsonSerializerOptions
     {
-        DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         PropertyNameCaseInsensitive = true
     };
 
@@ -75,7 +76,7 @@ public static class HttpMessageExtensions
         this HttpResponseMessage response,
         JsonSerializerOptions options = null)
     {
-        return await System.Text.Json.JsonSerializer.DeserializeAsync<TOut>(
+        return await JsonSerializer.DeserializeAsync<TOut>(
             await response.Content.ReadAsStreamAsync(),
             options ?? DefaultJsonSerializerOptions);
     }

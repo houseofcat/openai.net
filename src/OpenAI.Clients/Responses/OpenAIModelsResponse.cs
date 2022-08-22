@@ -3,10 +3,10 @@ using System.Text.Json.Serialization;
 
 namespace OpenAI.Clients.Responses;
 
-public class ApiModelsResponse
+public class OpenAIModelsResponse
 {
     public string Object { get; set; }
 
     [JsonPropertyName("data")]
-    public List<Model> Models { get; set; }
+    public List<OpenAIModelResponse> Models { get; set; }
 }
